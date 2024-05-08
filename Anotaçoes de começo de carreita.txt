@@ -1,0 +1,8 @@
+1. Cloud Computing
+2. Git
+3. Basic DB knowledge
+4. Basic Linux knowledge
+5. Basic Docker knowledge 
+6. Basic API knowledge
+7. Pipelines
+
