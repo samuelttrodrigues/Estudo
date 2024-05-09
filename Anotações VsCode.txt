@@ -1,6 +1,0 @@
-Sistema de comentários em código coloridos
-    ! <- Deixa o texto comentário vermelho: Utilizar para high priority
-    * <- Deixa o texto comentário verde: Utilizar para low priority
-    ? <- Deixa o texto comentário azul: Utilizar para questionamentos
-    TODO: <- Deixa o texto comentário laranja: Utilizar para agendar edições futuras.
-    // <- Deixa o texto comentário com fundo e amarelo: Utilizar para marcar pontos de inserção de novos códigos

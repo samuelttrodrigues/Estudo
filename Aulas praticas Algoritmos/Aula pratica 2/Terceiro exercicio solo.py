@@ -7,5 +7,30 @@ print("Qual o seu tipo de instalação elétrica?")
 print("Selecione R para residências")
 print("Selecione I para industrias")
 print("Selecione C para comércios")
+
 instalacao = input("Minha instalação elétrica é: ")
-consumo = int(input("Qual foi o seu consumo em kWh? \nMeu consumo foi de "))
+consumo = int(input("Qual foi o seu consumo em kWh? \nConsumo:"))
+
+if (instalacao == "R" or instalacao == "r"):
+    if(consumo <= 500):
+        preco = 0.4
+    else:
+        preco = 0.65
+    print(f'Total a pagar: R${consumo * preco}')
+
+elif (instalacao == "I" or instalacao == "i"):
+    if(consumo <= 5000):
+        preco = 0.55
+    else:
+        preco = 0.60
+    print(f'Total a pagar: R${consumo * preco}')
+
+elif (instalacao == "C" or instalacao == "c"):
+    if(consumo <= 1000):
+        preco = 0.55
+    else:
+        preco = 0.60
+    print(f'Total a pagar: R${consumo * preco}')
+
+else:
+    print('Instalação inválida. Encerrando...')
