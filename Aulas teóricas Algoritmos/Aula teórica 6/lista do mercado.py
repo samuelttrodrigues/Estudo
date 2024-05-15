@@ -22,8 +22,9 @@ for i in range(3):
 print(mercado)
 
 #* Calculando com os valores da lista a cima
-
+'''
 soma = 0
+
 
 print('Lista de compras:')
 print('-' * 20)
@@ -33,3 +34,4 @@ for item in mercado:
     soma += item[1] * item[2]
 print('-' * 20)
 print(f'Total a ser pago: {soma}')
+'''
