@@ -1,11 +1,10 @@
-
-
 # Validação das opções do Menu
 def valida_opcao(pergunta,min,max):
     x = int(input(pergunta))
     while((x < min) or (x > max)):
         x = int(input(pergunta))
     return x
+
 # Opção 1 - Cadastro de livro
 def cadastrar_livro(id):
 
@@ -15,16 +14,18 @@ def cadastrar_livro(id):
     nome = input('Digite o nome do livro: ')
     autor = input('Digite o Autor: ')
     editora = input('Digite a editora: ')
-    
+    # Cria um dicionario com as informações do livro e adiciona a lista de livros
     livro = {'ID': id,'Nome':nome,'Autor':autor,'Editora':editora}
 
     lista_livro.append(livro)
+
 # Opção 2 - Listar Livros por: Todos, ID e autor
-def listar_livro():
+def consultar_livro():
     while True:
         menu_consulta()
         opcao = valida_opcao('>> ',1 ,4)
 
+        #Lista todos os livros
         if opcao == 1:
             print('-' * 60)
             for livro in lista_livro:
@@ -33,6 +34,7 @@ def listar_livro():
                     print(f'{chave}: {valor}')
             continue
 
+        #Consulta livros por ID especifico    
         elif opcao == 2:
             consultar_id = int(input('\nDigite o ID do livro: '))
             for livro in lista_livro:
@@ -42,7 +44,7 @@ def listar_livro():
                         print(f'{chave}: {valor}')
                     continue
 
-        
+        #Consulta livros por autor
         elif opcao == 3:
             consultar_por_autor = input ('\nDigite o nome do autor do(s) livro(s): ')
             print(f'Livros do autor {consultar_por_autor}\n')
@@ -52,21 +54,20 @@ def listar_livro():
                             print(f'{chave}: {valor}')
             continue
 
-
-
         else:
             break
+
 # Opção 3 - Remove livro por ID somente
 def remover_livro():
-        for livro in lista_livro:            
-            remover = int(input('Digite o ID do livro que gostaria de remover: '))
+    while True:
+        remover = int(input('Digite o ID do livro que gostaria de remover: '))
+        for livro in lista_livro:
             if livro['ID'] == remover:
                 lista_livro.remove(livro)
                 print('O livro foi removido')
                 return
-            else:
-                print('ID inválido')
-                remover_livro()
+        else:
+            print('ID inválido. Tente novamente')
 
 # Sequencia de menus utilizado no código
 def menu_principal():
@@ -96,27 +97,25 @@ def menu_remover():
     print('-'* 56)
     print('-' * 20,'REMOVER LIVRO','-'*20)
 
-#! Programa principal
+# Programa principal
 
 lista_livro = []
 id_global = 0
 
 while True:
-
-
     menu_principal()
 
     opcao = valida_opcao('>> ',1,4)
 
     if(opcao == 1): #Cadastrar Livro
-        print('\nOpção de cadastrar novo item selecionada...\nPor favor siga as instruções\n')
+        print('\nOpção de cadastrar novo item selecionada...\nPor favor siga as insira os dados corretamente.\n')
         menu_cadastro()
         cadastrar_livro(id_global)
         continue
 
     elif(opcao == 2): #Consultar Livros(s)
-        print('\nOpção de listar selecionada...\n')
-        listar_livro()
+        print('\nOpção de consular livros selecionada...\n')
+        consultar_livro()
  
     elif(opcao == 3): #Remover Livro
         print('\nOpção de remover livro selecionada ...\n')
@@ -124,5 +123,5 @@ while True:
         remover_livro()
 
     elif(opcao == 4): #Sair
-        print('Encerrando o programa...')
+        print('Encerrando o programa... Tchau Tchau')
         break
