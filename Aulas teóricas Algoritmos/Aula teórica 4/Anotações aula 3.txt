@@ -1,4 +1,0 @@
-Aprenderemos 
-    While
-    for
-    Laços de repetição aninhados

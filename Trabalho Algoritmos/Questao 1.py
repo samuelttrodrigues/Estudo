@@ -1,4 +1,4 @@
-# Questão 1/4 Conteúdo até Aula 03
+# Questão 1/4 
 
 print('Bem-vindo ao atacarejo do Samuel Thiago Telles Rodrigues.')
 preco_unitario = float(input('Escreva o valor do produto em R$: '))
